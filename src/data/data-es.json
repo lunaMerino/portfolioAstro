@@ -1,0 +1,48 @@
+{
+    "aboutMe": {
+      "name": "Luna García-Arcicóllar Merino",
+      "profession": "Desarrolladora Web",
+      "description": "Desarrolladora web apasionada que disfruta resolviendo problemas y creando soluciones innovadoras.",
+      "photo": "profile.jpg"
+    },
+    "skills":["HTML", "CSS", "JavaScript", "Astro", "Java", "MySQL", "Spring Boot", "Azure", "Figma", "Git"]
+,
+    "education": [
+      {
+        "degree": "Desarrollo de Aplicaciones Web",
+        "institution": "Escuela Santa Joaquina de Vedruna",
+        "year": "2024"
+      },
+      {
+        "degree": "Certificado de Profesionalidad 'Programación de Sistemas Informáticos', IFCT 0609 (590 h.)",
+        "institution": "Junta de Andalucía",
+        "year": "2023"
+      },
+      {
+        "degree": "Grado en Antropología Social y Cultural",
+        "institution": " Universidad de Sevilla",
+        "year": "2022"
+      }
+    ],
+    "workExperience": [
+      {
+        "role": "Programadora informática",
+        "company": "Ayuntamiento de Mairena del Alcor",
+        "years": "2022-2023",
+        "description": "Programa de Empleo y formación 'Programación de Sistemas informáticos' IFC303_3"
+      }
+    ],
+    "references": [
+      {
+        "name": "Joaquín Borrego",
+        "contact": "joaquin.borrego@vedruna.es",
+        "relation": "Tutor Desarrollo de Aplicaciones Web"
+      },
+      {
+        "name": "Juan Antonio Gonzalez Diaz",
+        "contact": "juangd@yahoo.es",
+        "relation": "Tutor Programa de Empleo y formación"
+      }
+    ]
+  }
+  
