@@ -9,14 +9,15 @@ const { title } = Astro.props;
     <title>{title ? title : 'Mi Portfolio'}</title>
     <link href="/styles/global.css" rel="stylesheet" />
   </head>
-  <body class="bg-gray-50">
-    <header class="bg-indigo-600 text-white py-4">
+  <body class="bg-color1">
+    <!-- <div> -->
+    <header class="bg-color2 text-whitish py-4">
       <nav class="container mx-auto flex justify-between items-center">
-        <h1 class="text-3xl font-bold">Mi Portfolio</h1>
+        <h1 class="text-3xl font-poppins italic">Mi Portfolio</h1>
         <ul class="flex space-x-6">
-          <li><a href="#about-me" class="hover:text-gray-300">My self</a></li>
-          <li><a href="#projects" class="hover:text-gray-300">My Work</a></li>
-          <li><a href="#contact" class="hover:text-gray-300">My resumé</a></li>
+          <li><a href="#about-me" class="font-poppins italic hover:text-blackish">My self</a></li>
+          <li><a href="#projects" class="font-poppins italic hover:text-blackish">My Work</a></li>
+          <li><a href="#contact" class="font-poppins italic hover:text-blackish">My resumé</a></li>
         </ul>
       </nav>
     </header>

@@ -4,11 +4,16 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-			  green: '#39810D',
-			  whitish: '#F5F5F5',
-			  grey: '#CDCACA',
-			}
-		  },
-	},
+			  color1: '#7B5A64',
+			  color2: '#5D444C',
+			  color3: '#3F2E33',
+			  whitish: '#FAF4F1',
+			  blackish: '#161615',
+			},
+			fontFamily: {
+				poppins: ['"Poppins"', 'sans-serif'],
+			  },
+			},
+	 },
 	plugins: [],
 }
