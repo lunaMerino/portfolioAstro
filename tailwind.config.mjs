@@ -13,6 +13,9 @@ export default {
 			fontFamily: {
 				poppins: ['"Poppins"', 'sans-serif'],
 			  },
+			  padding: {
+				'20p': '20%',
+			  },
 			},
 	 },
 	plugins: [],
