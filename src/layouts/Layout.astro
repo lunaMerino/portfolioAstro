@@ -1,8 +1,10 @@
 ---
-const { title } = Astro.props;
+const { title, lang } = Astro.props;
+const otherLang = lang === "en" ? "/indexEs" : "/indexEn";
+const otherLangText = lang === "en" ? "Español" : "English";
 ---
 <!DOCTYPE html>
-<html lang="es">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,6 +15,9 @@ const { title } = Astro.props;
     <div class="flex flex-row">
       <header class="bg-color2 text-whitish py-4 h-screen pt-24 w-1/5 fixed">
         <nav class="flex flex-col pl-20p gap-60">
+          <a href={otherLang} class="lang-switch">
+            {otherLangText}
+          </a>
           <ul class="flex flex-col gap-8">
             <li><a href="#about-me" class="font-poppins italic hover:text-blackish">My self</a></li>
             <li><a href="#projects" class="font-poppins italic hover:text-blackish">My Work</a></li>
@@ -21,13 +26,34 @@ const { title } = Astro.props;
           <ul class="flex flex-col gap-4">
             <li><img src="../../public/gitHub.png" alt="gitHub" class="h-14 hover:drop-shadow-md" /></li>
             <li><img src="../../public/linkedIn.png" alt="linkedIn" class="h-14 hover:drop-shadow-md" /></li>
-            <li><img src="../../public/mail.png" alt="contact" class="h-14 hover:drop-shadow-md" /></li>
+            <li>
+              <img
+                src="../../public/mail.png"
+                alt="contact"
+                class="h-14 hover:drop-shadow-md cursor-pointer"
+                data-scroll-to-contact
+              />
+            </li>
           </ul>
         </nav>
       </header>
-      <!-- <main class="container mx-auto mt-8"> -->
-      <slot />
-      <!-- </main> -->
+      <main class="ml-60 w-4/5">
+        <slot />
+      </main>
     </div>
+    <!-- script para el scrolling -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const mailButton = document.querySelector('[data-scroll-to-contact]');
+        if (mailButton) {
+          mailButton.addEventListener('click', () => {
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+              contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>
