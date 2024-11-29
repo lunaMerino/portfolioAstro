@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import CardProject from './CardProject.jsx';
+import SearchProjects from './SearchProjects.jsx';
 
 
 const testMode = process.env.NODE_ENV === 'development'; //true = development
@@ -8,18 +9,19 @@ const Projects = () => {
     const [page, setPage] = useState(0);
     const [projects, setProjects] = useState([]);
     const [totalPages, setTotalPages] = useState(0);
+    const [searchQuery, setSearchQuery] = useState('');
     const url = 'http://localhost:8080/api/v1/projects';
 
-    useEffect(() => {
-        fetchProjects(page);
-    }, [page]);
 
-
-    const fetchProjects = async (p = 0) => {
+    const fetchProjects = async (p = 0, query = '') => {
         try {
-            const response = await fetch(url + '?size=3' + '&page=0' + p);
+            let fetchUrl = `${url}?size=3&page=${p}`;
+            if (query) {
+                fetchUrl = `${url}/${query}?size=3&page=${p}`;
+            }
+            const response = await fetch(fetchUrl);
             const jsonData = await response.json();
-                         
+
             setProjects(jsonData.content);
             setTotalPages(jsonData.totalPages);
         } catch (error) {
@@ -27,10 +29,15 @@ const Projects = () => {
         }
     };
 
+    
+    useEffect(() => {
+        fetchProjects(page, searchQuery);
+    }, [page, searchQuery]);
+
     const handleDelete = async (id) => {
         try {
             await fetch(`${url}/${id}`, { method: 'DELETE' });
-            fetchProjects(page);
+            fetchProjects(page, searchQuery);
         } catch (error) {
             console.error('Error deleting project:', error);
         }
@@ -39,6 +46,7 @@ const Projects = () => {
     return (
         <>
         <div className="container mx-auto p-4 pl-60">
+            <SearchProjects onSearch={setSearchQuery} />
             <ul id="projects" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {
                 projects.map(

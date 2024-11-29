@@ -1,0 +1,104 @@
+---
+import data from "../data/data-en.json";
+import Layout from "../layouts/Layout.astro";
+import Projects from "../components/Projects.jsx";
+import ContactForm from "../components/ContactForm";
+
+const { skills, education, workExperience, references } = data;
+---
+
+<Layout lang="en" title="Welcome to my Portfolio" class="flex flex-column">
+  <div>
+    <div>
+      <div id="about-me" class="flex flex-row m-20">
+        <div class="flex flex-col justify-end">
+          <div class="flex flex-col">
+            <h1 class="text-4xl font-poppins italic text-whitish mt-6">{data.aboutMe.name}</h1>
+            <h2 class="text-xl text-color3 font-poppins italic">{data.aboutMe.profession}</h2> <!-- CAMBIO -->
+          </div>
+          <p class="mt-4 text-lg text-blackish font-poppins italic">{data.aboutMe.description}</p>
+        </div>
+        <img src={`/images/${data.aboutMe.photo}`} alt="Profile picture" class="rounded-full mx-auto mt-4 w-48 h-48 object-cover" /> <!-- CAMBIO -->
+      </div>
+
+      <Projects client:only="react" />
+
+    </div>
+    <div id="skills" class="my-12">
+      <h2 class="text-3xl font-bold text-blackish font-poppins italic text-center mb-8">Skills</h2>
+      <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+        <div class="w-full md:w-1/3">
+          <h3 class="text-xl font-bold mb-2">Front-end</h3>
+          {skills.frontEnd.map((skill) => (
+            <div class="bg-color3 text-whitish font-medium px-4 py-2 rounded-full shadow-lg hover:bg-color2 hover:drop-shadow-md hover:text-blackish transition">
+              {skill}
+            </div>
+          ))}
+        </div>
+        <div class="w-full md:w-1/3">
+          <h3 class="text-xl font-bold mb-2">Back-end</h3>
+          {skills.backEnd.map((skill) => (
+            <div class="bg-color3 text-whitish font-medium px-4 py-2 rounded-full shadow-lg hover:bg-color2 hover:drop-shadow-md hover:text-blackish transition">
+              {skill}
+            </div>
+          ))}
+        </div>
+        <div class="w-full md:w-1/3">
+          <h3 class="text-xl font-bold mb-2">DevOps</h3>
+          {skills.devOps.map((skill) => (
+            <div class="bg-color3 text-whitish font-medium px-4 py-2 rounded-full shadow-lg hover:bg-color2 hover:drop-shadow-md hover:text-blackish transition">
+              {skill}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div id="resume" class="flex flex-row m-24">
+      <div id="education" class="my-12 p-4">
+        <h2 class="text-3xl font-black text-blackish font-poppins italic text-center mb-8">Education</h2>
+        <div class="flex flex-col space-y-6 max-w-3xl mx-auto">
+          {education.map((item) => (
+            <div class="bg-whitish font-poppins italic p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+              <h3 class="text-xl font-semibold text-color3">{item.degree}</h3>
+              <p class="font-poppins italic text-color3">{item.institution}</p>
+              <span class="text-sm font-poppins italic text-color2">{item.year}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div id="work-experience" class="my-12 p-4">
+        <h2 class="text-3xl font-black font-poppins italic text-blackish text-center mb-8">Work Experience</h2>
+        <div class="flex flex-col space-y-6 max-w-3xl mx-auto">
+          {workExperience.map((job) => (
+            <div class="bg-whitish p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+              <h3 class="text-xl font-poppins italic font-semibold text-color3">{job.role}</h3>
+              <p class="font-poppins italic text-color3">{job.company}</p>
+              <span class="text-sm font-poppins italic text-color3">{job.years}</span>
+              <p class="mt-4 font-poppins italic text-color2">{job.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div id="references" class="my-12">
+      <h2 class="text-3xl font-poppins italic font-bold text-blackish text-center mb-8">References</h2>
+      <div class="flex flex-row items-center justify-between max-w-3xl mx-auto">
+        {references.map((ref) => (
+          <div class="bg-whitish h-[140px] p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <h3 class="text-xl font-semibold font-poppins italic text-color3">{ref.name}</h3>
+            <p class="font-poppins italic text-color3">{ref.relation}</p>
+            <a href={`mailto:${ref.contact}`} class="text-s text-opacity-60 font-poppins italic text-color2 hover:underline">
+              {ref.contact}
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div id="contact">
+      <ContactForm />
+    </div>
+  </div>
+</Layout>
