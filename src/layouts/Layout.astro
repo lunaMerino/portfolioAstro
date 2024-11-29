@@ -13,28 +13,34 @@ const otherLangText = lang === "en" ? "Español" : "English";
   </head>
   <body class="bg-color1 shadow-lg shadow-opacity-100">
     <div class="flex flex-row">
-      <header class="bg-color2 text-whitish py-4 h-screen pt-24 w-1/5 fixed">
-        <nav class="flex flex-col pl-20p gap-60">
-          <a href={otherLang} class="lang-switch">
-            {otherLangText}
-          </a>
-          <ul class="flex flex-col gap-8">
-            <li><a href="#about-me" class="font-poppins italic hover:text-blackish">My self</a></li>
-            <li><a href="#projects" class="font-poppins italic hover:text-blackish">My Work</a></li>
-            <li><a href="#contact" class="font-poppins italic hover:text-blackish">My resumé</a></li>
-          </ul>
-          <ul class="flex flex-col gap-4">
-            <li><img src="../../public/gitHub.png" alt="gitHub" class="h-14 hover:drop-shadow-md" /></li>
-            <li><img src="../../public/linkedIn.png" alt="linkedIn" class="h-14 hover:drop-shadow-md" /></li>
-            <li>
-              <img
-                src="../../public/mail.png"
-                alt="contact"
-                class="h-14 hover:drop-shadow-md cursor-pointer"
-                data-scroll-to-contact
-              />
-            </li>
-          </ul>
+      <header class="bg-color2 text-whitish h-screen w-1/5 fixed">
+        <nav class="h-screen flex flex-col gap-28">
+          <div class="h-1/2 flex flex-col">
+            <a href={otherLang} class="lang-switch font-poppins italic text-right mt-4 mr-4  hover:underline hover:text-blackish">
+              {otherLangText}
+            </a>
+            <div class="mt-28">
+              <ul class="flex flex-col gap-8 pl-20p">
+                <li><a href="#about-me" class="font-poppins italic hover:underline hover:text-blackish">My self</a></li>
+                <li><a href="#projects" class="font-poppins italic hover:underline hover:text-blackish">My Work</a></li>
+                <li><a href="#contact" class="font-poppins italic hover:underline hover:text-blackish">My resumé</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <ul class="items-center flex flex-col gap-4">
+              <li><img src="../../public/gitHub.png" alt="gitHub" class="h-14 hover:drop-shadow-md" /></li>
+              <li><img src="../../public/linkedIn.png" alt="linkedIn" class="h-14 hover:drop-shadow-md" /></li>
+              <li>
+                <img
+                  src="../../public/mail.png"
+                  alt="contact"
+                  class="h-14 hover:drop-shadow-md cursor-pointer"
+                  data-scroll-to-contact
+                />
+              </li>
+            </ul>
+          </div>
         </nav>
       </header>
       <main class="ml-60 w-4/5">
