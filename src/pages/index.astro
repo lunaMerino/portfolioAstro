@@ -2,7 +2,9 @@
 import data from "../data/data-en.json";
 // import data from "../data/data-es.json";
 import Layout from "../layouts/Layout.astro";
-
+import Projects from "../components/Projects.jsx";
+// import "@fontsource/poppins/400.css"; /* Normal */
+// import "@fontsource/poppins/400-italic.css"; /* Italic */
 
 const { skills, education, workExperience, references } = data;
 ---
@@ -18,11 +20,10 @@ const { skills, education, workExperience, references } = data;
           </div>
           <p class="mt-4 text-lg text-blackish font-poppins italic">{data.aboutMe.description}</p>
         </div>
-        <img src={`/images/${data.aboutMe.photo}`} alt="Mi foto de perfil" class="rounded-full mx-auto mt-4 w-48 h-48 object-cover" />
+        <!-- <img src={`/images/${data.aboutMe.photo}`} alt="Mi foto de perfil" class="rounded-full mx-auto mt-4 w-48 h-48 object-cover" /> -->
       </div>
 
-
-      <Projects/>
+      <Projects client:only="react" />
 
     </div>
     <div id="skills" class="my-12">
@@ -55,19 +56,6 @@ const { skills, education, workExperience, references } = data;
           </div>
         </div>
         
-
-      <Projects/>
-    </div>
-
-    <div id="skills" class="my-12">
-      <h2 class="text-3xl font-bold text-blackish font-poppins italic text-center mb-8">Skills</h2>
-      <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-          
-        {skills.map((skill) => (
-          <div class="bg-color3 text-whitish font-medium px-4 py-2 rounded-full shadow-lg hover:bg-color2 hover:drop-shadow-md hover:text-blackish transition">
-            {skill}
-          </div>
-        ))}
     </div>
     <div id="resume" class="flex flex-row m-24">
       <div id="education" class="my-12 p-4">

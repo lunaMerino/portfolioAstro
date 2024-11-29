@@ -15,7 +15,42 @@
       "degree": "Web Application Development",
       "institution": "Santa Joaquina de Vedruna School",
       "year": "2024"
+    },
+    {
+      "degree": "Professional Certificate in 'Computer Systems Programming' IFCT 0609 (590 h.)",
+      "institution": "Junta de Andalucía",
+      "year": "2023"
+    },
+    {
+      "degree": "Bachelor's Degree in Social and Cultural Anthropology",
+      "institution": "University of Seville",
+      "year": "2022"
     }
- 
-]
+  ],
+  "workExperience": [
+    {
+      "role": "Software Developer",
+      "company": "Mairena del Alcor City Council",
+      "years": "2022-2023",
+      "description": "Employment and Training Program 'Computer Systems Programming' IFC303_3"
+    },
+    {
+      "role": "Web Developer Intern",
+      "company": "Seville Technology Hub",
+      "years": "2021-2022",
+      "description": "Practical experience as part of the 'Web Application Development' program, focusing on front-end and back-end integration."
+    }
+  ],
+  "references": [
+    {
+      "name": "Joaquín Borrego",
+      "contact": "joaquin.borrego@vedruna.es",
+      "relation": "Web Application Development Tutor"
+    },
+    {
+      "name": "Juan Antonio Gonzalez Diaz",
+      "contact": "juangd@yahoo.es",
+      "relation": "Employment and Training Program Tutor"
+    }
+  ]
 }
