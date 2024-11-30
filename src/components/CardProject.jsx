@@ -1,5 +1,4 @@
 import React from 'react';
-
 const CardProject = ({ props, test = false, onDelete }) => (
   <li className="bg-white shadow-lg rounded-md p-4  h-[500px] flex flex-col">
     <div
@@ -45,7 +44,7 @@ const CardProject = ({ props, test = false, onDelete }) => (
       {test && (
         <button
           onClick={onDelete}
-          className="mt-2 bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
+          className="mt-2 bg-color7 text-white py-2 px-4 rounded hover:bg-color5 hover:text-blackish"
         >
           Eliminar
         </button>

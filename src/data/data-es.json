@@ -6,10 +6,64 @@
     "photo": "profile.jpg"
   },
   "skills": {
-    "frontEnd": ["HTML", "CSS", "JavaScript", "Astro", "Figma"],
-    "backEnd": ["Java", "Spring Boot", "MySQL"],
-    "devOps": ["Azure", "Git"]
-  },
+    "frontEnd": [
+      {
+        "name": "HTML",
+        "image": "/../html.png",
+        "value": 90
+      },
+      {
+        "name": "CSS",
+        "image": "../../public/css.png",
+        "value": 85
+      },
+      {
+        "name": "JavaScript",
+        "image": "../../public/js.png",
+        "value": 70
+      },
+      {
+        "name": "Astro",
+        "image": "../../public/astro.png",
+        "value": 70
+      },
+      {
+        "name": "Figma",
+        "image": "../../public/figmaLogo.png",
+        "value": 90
+      }
+    ],
+    "backEnd": [
+      {
+        "name": "Java",
+        "image": "../../public/java.png",
+        "value": 60
+      },
+      {
+        "name": "Spring Boot",
+        "image": "../../public/springBoot.png",
+        "value": 75
+      },
+      {
+        "name": "MySQL",
+        "image": "../../public/mySql.png",
+        "value": 80
+      }
+    ],
+    "devOps": [
+      {
+        "name": "Azure",
+        "image": "../../public/azure.png",
+        "value": 60
+      },
+      {
+        "name": "Git",
+        "image": "../../public/gitHub.png",
+        "value": 65
+      }
+    ]
+  }
+  ,
   "education": [
     {
       "degree": "Desarrollo de Aplicaciones Web",
