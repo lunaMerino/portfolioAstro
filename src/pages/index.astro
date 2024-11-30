@@ -8,17 +8,20 @@ const { skills, education, workExperience, references } = data;
 ---
 
 <Layout lang="en" title="Welcome to my Portfolio" class="flex flex-column">
-  <div>
+  <div >
     <div>
-      <div id="about-me" class="flex flex-row m-20">
-        <div class="flex flex-col justify-end">
-          <div class="flex flex-col">
-            <h1 class="text-4xl font-poppins italic text-whitish mt-6">{data.aboutMe.name}</h1>
-            <h2 class="text-xl text-color3 font-poppins italic">{data.aboutMe.profession}</h2> <!-- CAMBIO -->
+      <div id="about-me" class="flex flex-row m-0 h-screen m-20">
+        <div class="flex flex-col">
+          <div class="h-1/2"></div>
+          <div>
+            <div class="flex flex-col gap-4">
+              <h1 class="text-right text-4xl font-poppins italic text-whitish mt-6">{data.aboutMe.name}</h1>
+              <h2 class="text-right text-xl text-color3 font-poppins italic">{data.aboutMe.profession}</h2>
+            </div>
+            <p class="mt-8 text-lg text-blackish font-poppins italic">{data.aboutMe.description}</p>
           </div>
-          <p class="mt-4 text-lg text-blackish font-poppins italic">{data.aboutMe.description}</p>
         </div>
-        <img src={`/images/${data.aboutMe.photo}`} alt="Profile picture" class="rounded-full mx-auto mt-4 w-48 h-48 object-cover" /> <!-- CAMBIO -->
+        <img src={`/images/${data.aboutMe.photo}`} alt="Profile picture" class="rounded-full mx-auto mt-32 mr-28 w-48 h-48 object-cover" /> <!-- CAMBIO -->
       </div>
 
       <Projects client:only="react" />

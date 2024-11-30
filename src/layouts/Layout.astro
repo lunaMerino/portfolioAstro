@@ -1,7 +1,9 @@
 ---
 const { title, lang } = Astro.props;
-const otherLang = lang === "en" ? "/indexEs" : "/indexEn";
+const otherLang = lang === "en" ? "/indexEs" : "/";
 const otherLangText = lang === "en" ? "Español" : "English";
+import Footer from '../components/Footer.astro';
+
 ---
 <!DOCTYPE html>
 <html lang={lang}>
@@ -12,43 +14,74 @@ const otherLangText = lang === "en" ? "Español" : "English";
     <link href="/styles/global.css" rel="stylesheet" />
   </head>
   <body class="bg-color1 shadow-lg shadow-opacity-100">
-    <div class="flex flex-row">
+    <div class="flex min-h-screen">
       <header class="bg-color2 text-whitish h-screen w-1/5 fixed">
-        <nav class="h-screen flex flex-col gap-28">
-          <div class="h-1/2 flex flex-col">
+        <nav class="h-screen flex flex-col justify-between">
+          <div class="flex flex-col">
             <a href={otherLang} class="lang-switch font-poppins italic text-right mt-4 mr-4  hover:underline hover:text-blackish">
               {otherLangText}
             </a>
             <div class="mt-28">
-              <ul class="flex flex-col gap-8 pl-20p">
+              <ul class="flex flex-col gap-8 pl-12 mt-16">
                 <li><a href="#about-me" class="font-poppins italic hover:underline hover:text-blackish">My self</a></li>
                 <li><a href="#projects" class="font-poppins italic hover:underline hover:text-blackish">My Work</a></li>
-                <li><a href="#contact" class="font-poppins italic hover:underline hover:text-blackish">My resumé</a></li>
+                <li><a href="#resume" class="font-poppins italic hover:underline hover:text-blackish">My resumé</a></li>
               </ul>
             </div>
           </div>
-          <div class="flex flex-col">
-            <ul class="items-center flex flex-col gap-4">
-              <li><img src="../../public/gitHub.png" alt="gitHub" class="h-14 hover:drop-shadow-md" /></li>
-              <li><img src="../../public/linkedIn.png" alt="linkedIn" class="h-14 hover:drop-shadow-md" /></li>
+          <div class="flex flex-col mb-10">
+            <ul class="items-center flex flex-col">
               <li>
-                <img
-                  src="../../public/mail.png"
-                  alt="contact"
-                  class="h-14 hover:drop-shadow-md cursor-pointer"
-                  data-scroll-to-contact
-                />
+                <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer">
+                  <img src="../../public/gitHub.png" alt="gitHub" class="h-14 mb-4 hover:scale-[1.15] transition-transform duration-300 hover:drop-shadow-md" />
+                </a>
               </li>
+              <li>
+                <a href="https://www.linkedin.com/in/luna-merino/" target="_blank" rel="noopener noreferrer">
+                  <img src="../../public/linkedIn.png" alt="linkedIn" class="h-14 mb-4 hover:scale-[1.15] transition-transform duration-300 hover:drop-shadow-md" /></li>
+                </a>
+              <li>
+                  <a href="#contact">
+                    <img src="../../public/mail.png" alt="contact" class="h-14 hover:scale-[1.15] transition-transform duration-300 hover:drop-shadow-md" data-scroll-to-contact/>
+                  </a>
+                </li>
             </ul>
           </div>
         </nav>
       </header>
-      <main class="ml-60 w-4/5">
-        <slot />
-      </main>
+      <div class="ml-[20%] w-4/5">
+        <main>
+          <slot />
+        </main>
+        <Footer />
+      </div>
     </div>
-    <!-- script para el scrolling -->
+
+    <!-- script para el scrolls-->
     <script>
+
+      // scroll secciones menu
+      document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('a[href^="#"]');
+
+        links.forEach(link => {
+          link.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#')) {
+              const targetId = href.slice(1);
+              const targetElement = document.getElementById(targetId);
+
+              if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+              }
+            }
+          });
+        });
+      });
+
+      // scroll contacto
       document.addEventListener('DOMContentLoaded', () => {
         const mailButton = document.querySelector('[data-scroll-to-contact]');
         if (mailButton) {
