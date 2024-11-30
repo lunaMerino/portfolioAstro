@@ -45,7 +45,7 @@ const ContactForm = () => {
             </legend>
 
             <div id="divName" className="flex flex-col mt-1">
-              <label for="inputName" className="text-primary mb-2">Name:</label>
+              <label htmlFor="inputName" className="text-primary mb-2">Name:</label>
               <input
                 type="text"
                 id="inputName"
@@ -59,7 +59,7 @@ const ContactForm = () => {
             </div>
 
             <div id="divEmail" className="flex flex-col mt-1">
-              <label for="inputEmail" className="text-primary mb-2">Email:</label>
+              <label htmlFor="inputEmail" className="text-primary mb-2">Email:</label>
               <input
                 type="email"
                 id="inputEmail"
@@ -73,7 +73,7 @@ const ContactForm = () => {
             </div>
 
             <div id="divMessage" className="flex flex-col mt-2">
-              <label for="message" className="text-primary mb-2">Message:</label>
+              <label htmlFor="message" className="text-primary mb-2">Message:</label>
               <textarea
                 id="message"
                 className={`border rounded-md p-2 text-info bg-neutral-700 ${!validMessage ? 'border-red-500' : 'border-green-500'}`}
