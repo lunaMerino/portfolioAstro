@@ -46,7 +46,15 @@ const Projects = () => {
     return (
         <>
         <div className="container mx-auto p-4">
-            <SearchProjects onSearch={setSearchQuery} />
+            <div className="flex flex-row justify-between">
+                <div></div>
+                <div className="ml-60">
+                    <h2 class="text-3xl font-bold text-blackish font-poppins italic text-center mb-8">Projects</h2>
+                </div>
+                <div className='mr-4'>
+                <SearchProjects onSearch={setSearchQuery} />
+                </div>
+            </div>
             <ul id="projects" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {
                 projects.map(
