@@ -4,9 +4,13 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-			  color1: '#7B5A64',
-			  color2: '#5D444C',
-			  color3: '#3F2E33',
+			  color1: '#DCDCDC',
+			  color2: '#BEBEBE',
+			  color3: '#A2A2A2',
+			  color4: '#868686',
+			  color5: '#6A6A6A',
+			  color6: '#4E4E4E',
+			  color7: '#323232',
 			  whitish: '#FAF4F1',
 			  blackish: '#161615',
 			},
