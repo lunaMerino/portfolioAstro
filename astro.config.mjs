@@ -5,9 +5,9 @@ import node from '@astrojs/node';
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'hybrid',  // para renderizar en el lado del servidor y del cliente
-  adapter: node({
-    mode: 'production',
+  output: 'server',  // para renderizar en el lado del servidor y del cliente
+  adapter: vercel({
+    mode: "standalone"
   }),
   integrations: [
     tailwind(),
