@@ -12,7 +12,6 @@ import Footer from '../components/Footer.astro';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title ? title : 'Mi Portfolio'}</title>
     <link href="/styles/global.css" rel="stylesheet" />
-    <script src="../components/validationForm.js" defer></script>
 
   </head>
   <body class="bg-color1 shadow-lg shadow-opacity-100">
@@ -21,7 +20,7 @@ import Footer from '../components/Footer.astro';
         <nav class="h-screen flex flex-col justify-between">
           <div class="flex flex-col">
             <div class="mt-28">
-              <ul class="flex flex-col gap-8 pl-12 mt-16">
+              <ul class="flex flex-col gap-8 pl-12 mt-4">
                 <li><a href="#about-me" class="font-poppins italic text-xl hover:underline hover:text-blackish">My self</a></li>
                 <li><a href="#projects" class="font-poppins italic text-xl hover:underline hover:text-blackish">My Work</a></li>
                 <li><a href="#resume" class="font-poppins italic text-xl hover:underline hover:text-blackish">My resumé</a></li>
@@ -45,9 +44,9 @@ import Footer from '../components/Footer.astro';
                   </a>
                 </li>
             </ul>
-            <a href={otherLang} class="lang-switch flex flex col items-end font-poppins italic text-right mt-4 mr-4  hover:underline hover:text-blackish">
-              {otherLangText}
-            </a>
+          <a href={otherLang} class="lang-switch flex flex col items-end font-poppins italic text-right mt-4 mr-12  hover:underline hover:text-blackish">
+            {otherLangText}
+          </a>
           </div>
         </nav>
       </header>
