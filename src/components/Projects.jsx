@@ -79,7 +79,7 @@ const Projects = () => {
                         <div className='grid grid-cols-3'>
                             <div className='w-1/3'></div>
                             <div className='flex items-center w-1/3'>
-                                <span>{page}</span>
+                                <span>{page +1}</span>
                             </div>
                             <div className='w-1/3'>
                                 <Button onClick={() => setPage((prevPage) => prevPage + 1)} label="Next"/>
@@ -91,7 +91,7 @@ const Projects = () => {
                                 <Button onClick={() => setPage((prevPage) => prevPage - 1)} label="Previous"/>
                             </div>
                             <div className='flex items-center ml-5 w-1/3'>
-                                <span>{page}</span>
+                                <span>{page + 1}</span>
                             </div>
                             <div className='w-1/'></div>
                         </div>
@@ -99,7 +99,7 @@ const Projects = () => {
                             <div className='grid grid-cols-3'>
                                 <button onClick={() => setPage((prevPage) => prevPage - 1)}>Anterior</button>
                                 <div className='flex items-center w-1/3'>
-                                    <span>{page}</span>
+                                    <span>{page + 1}</span>
                                 </div>
                                 <button onClick={() => setPage((prevPage) => prevPage + 1)}>Siguiente</button>
                             </div>
