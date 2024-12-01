@@ -12,25 +12,24 @@ import Footer from '../components/Footer.astro';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title ? title : 'Mi Portfolio'}</title>
     <link href="/styles/global.css" rel="stylesheet" />
+    <script src="../components/validationForm.js" defer></script>
+
   </head>
   <body class="bg-color1 shadow-lg shadow-opacity-100">
     <div class="flex min-h-screen">
-      <header class="bg-color3 text-whitish h-screen w-1/5 fixed">
+      <header class="bg-color3 text-whitish h-screen w-1/5 fixed shadow-black shadow-xl">
         <nav class="h-screen flex flex-col justify-between">
           <div class="flex flex-col">
-            <a href={otherLang} class="lang-switch font-poppins italic text-right mt-4 mr-4  hover:underline hover:text-blackish">
-              {otherLangText}
-            </a>
             <div class="mt-28">
               <ul class="flex flex-col gap-8 pl-12 mt-16">
-                <li><a href="#about-me" class="font-poppins italic hover:underline hover:text-blackish">My self</a></li>
-                <li><a href="#projects" class="font-poppins italic hover:underline hover:text-blackish">My Work</a></li>
-                <li><a href="#resume" class="font-poppins italic hover:underline hover:text-blackish">My resumé</a></li>
+                <li><a href="#about-me" class="font-poppins italic text-xl hover:underline hover:text-blackish">My self</a></li>
+                <li><a href="#projects" class="font-poppins italic text-xl hover:underline hover:text-blackish">My Work</a></li>
+                <li><a href="#resume" class="font-poppins italic text-xl hover:underline hover:text-blackish">My resumé</a></li>
               </ul>
             </div>
           </div>
-          <div class="flex flex-col mb-10">
-            <ul class="items-center flex flex-col">
+          <div class="flex flex-row justify-between mb-10">
+            <ul class="items-start ml-10 flex flex-col">
               <li>
                 <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer">
                   <img src="../../public/gitHub.png" alt="gitHub" class="h-14 mb-4 hover:scale-[1.15] transition-transform duration-300 hover:drop-shadow-md" />
@@ -46,6 +45,9 @@ import Footer from '../components/Footer.astro';
                   </a>
                 </li>
             </ul>
+            <a href={otherLang} class="lang-switch flex flex col items-end font-poppins italic text-right mt-4 mr-4  hover:underline hover:text-blackish">
+              {otherLangText}
+            </a>
           </div>
         </nav>
       </header>

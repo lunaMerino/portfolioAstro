@@ -90,7 +90,7 @@ const Projects = () => {
                             <div className='w-1/3'>
                                 <Button onClick={() => setPage((prevPage) => prevPage - 1)} label="Previous"/>
                             </div>
-                            <div className='flex items-center w-1/3'>
+                            <div className='flex items-center ml-5 w-1/3'>
                                 <span>{page}</span>
                             </div>
                             <div className='w-1/'></div>
