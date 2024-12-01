@@ -1,0 +1,248 @@
+---
+import data from "../data/data-es.json";
+import Layout from "../layouts/Layout.astro";
+import Projects from "../components/Projects.jsx";
+import Title from "../components/Title.astro";
+import Button from "../components/Button.jsx";
+
+const { skills, education, workExperience, references } = data;
+---
+
+<Layout lang="es" title="Bienvenido a mi Portfolio" class="flex flex-column m-0 p-0">
+  <div id="about-me" class="flex flex-row h-screen mx-44">
+    <div class="flex flex-col">
+      <div class="h-1/3"></div>
+        <div class="h-1/3 flex flex-col gap-4">
+          <h1 class="text-4xl font-poppins italic font-black text-color6 mt-6">{data.aboutMe.name}<br>{data.aboutMe.surname1}<br>{data.aboutMe.surname2}</h1>
+          <h2 class="text-xl text-color3 font-poppins italic">{data.aboutMe.profession}</h2>
+        </div>
+        <div class="h-1/3">
+          <p class="text-lg text-blackish font-poppins italic">{data.aboutMe.description}</p>
+        </div>
+      </div>
+      <img src={`/images/${data.aboutMe.photo}`} alt="Foto de perfil" class="rounded-full mt-44 mr-10 w-80 h-80 shadow-2xl shadow-black" />
+    </div>
+
+    <Projects client:only="react" />
+      
+    </div>
+    <div id="skills" class="my-12">
+      <Title text="Tecnologías"/>
+      <div class="grid grid-rows-3 gap-4 max-w-4xl mx-auto">
+        <div class="gap-4 w-full">
+          <h3 class="text-center font font-poppins italic text-xl font-bold mb-2">Back-end</h3>
+          <div class="flex flex-row justify-center gap-4 mb-8">
+            {skills.backEnd.map((skill) => (
+              <div class="flex flex-col md:w-1/6 justify-center items-center gap-2 text-center bg-color3 text-whitish font-medium px-4 py-2 rounded-lg shadow-lg hover:bg-color2 hover:drop-shadow-md hover:text-blackish hover:scale-110 transition">
+                <img src={skill.image} class="w-8" alt={skill.name} />
+                <div class="text-xs">
+                  {skill.level}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="gap-4 w-full">
+          <h3 class="text-center font font-poppins italic text-xl font-bold mb-2">Front-end</h3>
+          <div class="flex flex-row justify-center gap-4 mb-8">
+            {skills.frontEnd.map((skill) => (
+              <div class="flex flex-col md:w-1/6 justify-center items-center gap-2 text-center bg-color3 text-whitish font-medium px-4 py-2 rounded-lg shadow-lg hover:bg-color2 hover:drop-shadow-md hover:text-blackish hover:scale-110 transition">
+                <img src={skill.image} class="w-8" alt={skill.name} />
+                <div class="text-xs">
+                  {skill.level}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="gap-4 w-full">
+          <h3 class="text-center font font-poppins italic text-xl font-bold mb-2">DevOps</h3>
+          <div class="flex flex-row justify-center gap-4 mb-8">
+            {skills.devOps.map((skill) => (
+              <div class="flex flex-col md:w-1/6 justify-center items-center gap-2 text-center bg-color3 text-whitish font-medium px-4 py-2 rounded-lg shadow-lg hover:bg-color2 hover:drop-shadow-md hover:text-blackish hover:scale-110 transition">
+                <img src={skill.image} class="w-8" alt={skill.name} />
+                <div class="text-xs">
+                  {skill.level}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="resume" class="flex flex-row m-24">
+      <div id="education" class="my-12 p-4">
+        <Title text="Educación"/>
+        <div class="flex flex-col space-y-6 max-w-3xl mx-auto">
+          {education.map((item) => (
+            <div class="bg-color3 font-poppins italic p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+              <h3 class="text-xl font-semibold underline text-blackish">{item.degree}</h3>
+              <p class="font-poppins italic text-blackish">{item.institution}</p>
+              <span class="text-sm font-poppins italic text-blackish">{item.year}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div id="work-experience" class="my-12 p-4">
+        <Title text="Experiencia Laboral"/>
+        <div class="flex flex-col space-y-6 max-w-3xl mx-auto">
+          {workExperience.map((job) => (
+            <div class="bg-color3 p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+              <h3 class="text-xl font-poppins italic font-semibold underline text-blackish">{job.role}</h3>
+              <p class="font-poppins italic text-blackish">{job.company}</p>
+              <span class="text-sm font-poppins italic text-blackish">{job.years}</span>
+              <p class="mt-4 font-poppins italic text-blackish">{job.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div id="references" class="my-12">
+      <Title text="Referencias"/>
+      <div class="flex flex-row items-center justify-between max-w-3xl mx-auto">
+        {references.map((ref) => (
+          <div class="bg-color3 h-[140px] p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <h3 class="text-xl font-semibold font-poppins italic text-whitish mb-2">{ref.name}</h3>
+            <p class="font-poppins italic text-whitish text-sm mb-3">{ref.relation}</p>
+            <a href={`mailto:${ref.contact}`} class="flex items-center gap-2 group text-s text-opacity-60 font-poppins italic text-whitish hover:text-black">
+              <img src="../../public/mail.png" alt="mail" class="w-7 h-7 transition-transform" />
+              <span class="hover:underline group-hover:text-blackish text-sm">{ref.contact}</span>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div id="contact">
+      <div id="contact" class="flex flex-col items-center justify-center mt-40 mb-20">
+        <Title text="Contact me"/>
+        <form
+          action="mailto:marialuna.garcia-arcicollar@a.vedrunasevillasj.es"
+          method="get"
+          class="w-3/5 h-3/5 mt-2"
+        >
+          <fieldset class="p-4">
+
+            <div id="divName" class="flex flex-col mt-1">
+              <input
+                type="text"
+                id="inputName"
+                class={`border rounded-sm p-2 text-info bg-color2 placeholder:font-poppins placeholder:italic placeholder-color5`}
+                name="inputName"
+                placeholder="Name"
+                required
+              />
+            </div>
+
+            <div id="divEmail" class="flex flex-col mt-1">
+              <input
+                type="email"
+                id="inputEmail"
+                class={`border rounded-sm p-2 text-info bg-color2 placeholder:font-poppins placeholder:italic placeholder-color5`}
+                name="inputEmail"
+                placeholder="Email"
+                required
+              />
+            </div>
+
+            <div id="divMessage" class="flex flex-col mt-2">
+              <textarea
+                id="message"
+                class={`border rounded-sm p-2 text-info bg-color2 placeholder:font-poppins placeholder:italic placeholder-color5`}
+                name="message"
+                rows="5"
+                placeholder="Message"
+                required
+              ></textarea>
+            </div>
+
+            <div class="flex mt-2">
+              <Button label="Send Message" onClick={() => {}}/>
+            </div>
+          </fieldset>
+        </form>
+    <script>
+         
+          document.addEventListener("DOMContentLoaded", () => {
+    const inputName = document.getElementById("inputName") as HTMLInputElement | null;
+    const inputEmail = document.getElementById("inputEmail") as HTMLInputElement | null;
+    const inputMessage = document.getElementById("message") as HTMLInputElement | null;
+
+
+    inputName?.addEventListener("blur", () => {
+        const text = inputName.value.trim();
+        const namePattern = /^[A-Z][a-z]*$/;
+        const div = document.getElementById("divName");
+
+        if (div) {
+            if (text !== "" && namePattern.test(text)) {
+                inputName.className = "border rounded-md p-2 text-info border-green-500 bg-neutral-700";
+                removeErrorMessage(div);
+            } else {
+                inputName.className = "border rounded-md p-2 text-info border-red-500 bg-neutral-700";
+                displayErrorMessage(div, "The name must start with a capital letter and contain only alphabetic characters.");
+            }
+        }
+    });
+
+
+    inputEmail?.addEventListener("blur", () => {
+        const text = inputEmail.value.trim();
+        const emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+        const div = document.getElementById("divEmail");
+
+        if (div) {
+            if (text !== "" && emailPattern.test(text)) {
+                inputEmail.className = "border rounded-md p-2 text-info border-green-500 bg-neutral-700";
+                removeErrorMessage(div);
+            } else {
+                inputEmail.className = "border rounded-md p-2 text-info border-red-500 bg-neutral-700";
+                displayErrorMessage(div, "Please enter a valid email address.");
+            }
+        }
+    });
+
+
+    inputMessage?.addEventListener("blur", () => {
+        const text = inputMessage.value.trim();
+        const div = document.getElementById("divMessage");
+
+        if (div) {
+            if (text !== "" && text.length >= 20) {
+                inputMessage.className = "border rounded-md p-2 text-info border-green-500 bg-neutral-700";
+                removeErrorMessage(div);
+            } else {
+                inputMessage.className = "border rounded-md p-2 text-info border-red-500 bg-neutral-700";
+                displayErrorMessage(div, "The message must be at least 20 characters long.");
+            }
+        }
+    });
+
+    function displayErrorMessage(div: HTMLElement, message: string) {
+        const errorMessage = document.createElement("p");
+        errorMessage.textContent = message;
+        errorMessage.className = "text-red-500";
+
+        const existingMessage = div.querySelector("p");
+        if (existingMessage) {
+            div.removeChild(existingMessage);
+        }
+        div.appendChild(errorMessage);
+    }
+
+
+    function removeErrorMessage(div: HTMLElement) {
+        const existingMessage = div.querySelector("p");
+        if (existingMessage) {
+            div.removeChild(existingMessage);
+        }
+    }
+});
+
+        </script>
+      </div>
+    </div>
+  </div>
+</Layout>
