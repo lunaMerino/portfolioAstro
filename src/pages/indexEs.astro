@@ -30,33 +30,45 @@ const { skills, education, workExperience, references } = data;
     </div>
     <div id="skills" class="my-12">
       <Title text="Tecnologías"/>
-      <div class="flex flex-col gap-4 max-w-4xl mx-auto">
-        <div class="flex flex-row gap-4 w-full md:w-1/3">
-          <h3 class="font font-poppins italic text-xl font-bold mb-2">Back-end</h3>
-          {skills.backEnd.map((skill) => (
-            <div class="flex flex-col justify-center items-center text-center bg-color3 text-whitish font-medium px-4 py-2 rounded-lg shadow-lg hover:bg-color2 hover:drop-shadow-md hover:text-blackish transition">
-              <img src={skill.image} class="w-8" alt={skill.name} />
-              {skill.name}
-            </div>
-          ))}
+      <div class="grid grid-rows-3 gap-4 max-w-4xl mx-auto">
+        <div class="gap-4 w-full">
+          <h3 class="text-center font font-poppins italic text-xl font-bold mb-2">Back-end</h3>
+          <div class="flex flex-row justify-center gap-4 mb-8">
+            {skills.backEnd.map((skill) => (
+              <div class="flex flex-col md:w-1/6 justify-center items-center gap-2 text-center bg-color3 text-whitish font-medium px-4 py-2 rounded-lg shadow-lg hover:bg-color2 hover:drop-shadow-md hover:text-blackish hover:scale-110 transition">
+                <img src={skill.image} class="w-8" alt={skill.name} />
+                <div class="text-xs">
+                  {skill.level}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div class="flex flex-row gap-4 w-full md:w-1/3">
-          <h3 class="font font-poppins italic text-xl font-bold mb-2">Front-end</h3>
-          {skills.frontEnd.map((skill) => (
-            <div class="flex flex-col justify-center items-center text-center bg-color3 text-whitish font-medium px-4 py-2 rounded-lg shadow-lg hover:bg-color2 hover:drop-shadow-md hover:text-blackish transition">
-              <img src={skill.image} class="w-8" alt={skill.name} />
-              {skill.name}
-            </div>
-          ))}
+        <div class="gap-4 w-full">
+          <h3 class="text-center font font-poppins italic text-xl font-bold mb-2">Front-end</h3>
+          <div class="flex flex-row justify-center gap-4 mb-8">
+            {skills.frontEnd.map((skill) => (
+              <div class="flex flex-col md:w-1/6 justify-center items-center gap-2 text-center bg-color3 text-whitish font-medium px-4 py-2 rounded-lg shadow-lg hover:bg-color2 hover:drop-shadow-md hover:text-blackish hover:scale-110 transition">
+                <img src={skill.image} class="w-8" alt={skill.name} />
+                <div class="text-xs">
+                  {skill.level}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div class="flex flex-row gap-4 w-full md:w-1/3">
-          <h3 class="font font-poppins italic text-xl font-bold mb-2">DevOps</h3>
-          {skills.devOps.map((skill) => (
-            <div class="flex flex-col justify-center items-center text-center bg-color3 text-whitish font-medium px-4 py-2 rounded-lg shadow-lg hover:bg-color2 hover:drop-shadow-md hover:text-blackish transition">
-              <img src={skill.image} class="w-8" alt={skill.name} />
-              {skill.name}
-            </div>
-          ))}
+        <div class="gap-4 w-full">
+          <h3 class="text-center font font-poppins italic text-xl font-bold mb-2">DevOps</h3>
+          <div class="flex flex-row justify-center gap-4 mb-8">
+            {skills.devOps.map((skill) => (
+              <div class="flex flex-col md:w-1/6 justify-center items-center gap-2 text-center bg-color3 text-whitish font-medium px-4 py-2 rounded-lg shadow-lg hover:bg-color2 hover:drop-shadow-md hover:text-blackish hover:scale-110 transition">
+                <img src={skill.image} class="w-8" alt={skill.name} />
+                <div class="text-xs">
+                  {skill.level}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -66,10 +78,10 @@ const { skills, education, workExperience, references } = data;
         <Title text="Educación"/>
         <div class="flex flex-col space-y-6 max-w-3xl mx-auto">
           {education.map((item) => (
-            <div class="bg-whitish font-poppins italic p-6 rounded-lg shadow-lg hover:shadow-xl transition">
-              <h3 class="text-xl font-semibold text-color3">{item.degree}</h3>
-              <p class="font-poppins italic text-color3">{item.institution}</p>
-              <span class="text-sm font-poppins italic text-color2">{item.year}</span>
+            <div class="bg-color3 font-poppins italic p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+              <h3 class="text-xl font-semibold underline text-blackish">{item.degree}</h3>
+              <p class="font-poppins italic text-blackish">{item.institution}</p>
+              <span class="text-sm font-poppins italic text-blackish">{item.year}</span>
             </div>
           ))}
         </div>
@@ -79,11 +91,11 @@ const { skills, education, workExperience, references } = data;
         <Title text="Experiencia Laboral"/>
         <div class="flex flex-col space-y-6 max-w-3xl mx-auto">
           {workExperience.map((job) => (
-            <div class="bg-whitish p-6 rounded-lg shadow-lg hover:shadow-xl transition">
-              <h3 class="text-xl font-poppins italic font-semibold text-color3">{job.role}</h3>
-              <p class="font-poppins italic text-color3">{job.company}</p>
-              <span class="text-sm font-poppins italic text-color3">{job.years}</span>
-              <p class="mt-4 font-poppins italic text-color2">{job.description}</p>
+            <div class="bg-color3 p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+              <h3 class="text-xl font-poppins italic font-semibold underline text-blackish">{job.role}</h3>
+              <p class="font-poppins italic text-blackish">{job.company}</p>
+              <span class="text-sm font-poppins italic text-blackish">{job.years}</span>
+              <p class="mt-4 font-poppins italic text-blackish">{job.description}</p>
             </div>
           ))}
         </div>
@@ -94,11 +106,12 @@ const { skills, education, workExperience, references } = data;
       <Title text="Referencias"/>
       <div class="flex flex-row items-center justify-between max-w-3xl mx-auto">
         {references.map((ref) => (
-          <div class="bg-whitish h-[140px] p-6 rounded-lg shadow-md hover:shadow-lg transition">
-            <h3 class="text-xl font-semibold font-poppins italic text-color3">{ref.name}</h3>
-            <p class="font-poppins italic text-color3">{ref.relation}</p>
-            <a href={`mailto:${ref.contact}`} class="text-s text-opacity-60 font-poppins italic text-color2 hover:underline">
-              {ref.contact}
+          <div class="bg-color3 h-[140px] p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <h3 class="text-xl font-semibold font-poppins italic text-whitish mb-2">{ref.name}</h3>
+            <p class="font-poppins italic text-whitish text-sm mb-3">{ref.relation}</p>
+            <a href={`mailto:${ref.contact}`} class="flex items-center gap-2 group text-s text-opacity-60 font-poppins italic text-whitish hover:text-black">
+              <img src="../../public/mail.png" alt="mail" class="w-7 h-7 transition-transform" />
+              <span class="hover:underline group-hover:text-blackish text-sm">{ref.contact}</span>
             </a>
           </div>
         ))}

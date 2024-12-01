@@ -10,56 +10,56 @@
       {
         "name": "HTML",
         "image": "/../html.png",
-        "value": 90
+        "level": "Avanzado"
       },
       {
         "name": "CSS",
         "image": "../../public/css.png",
-        "value": 85
+        "level": "Avanzado"
       },
       {
         "name": "JavaScript",
         "image": "../../public/js.png",
-        "value": 70
+        "level": "Medio"
       },
       {
         "name": "Astro",
         "image": "../../public/astro.png",
-        "value": 70
+        "level": "Medio"
       },
       {
         "name": "Figma",
         "image": "../../public/figmaLogo.png",
-        "value": 90
+        "level": "Medio"
       }
     ],
     "backEnd": [
       {
         "name": "Java",
         "image": "../../public/java.png",
-        "value": 60
+        "level": "Medio"
       },
       {
         "name": "Spring Boot",
         "image": "../../public/springBoot.png",
-        "value": 75
+        "level": "Medio"
       },
       {
         "name": "MySQL",
         "image": "../../public/mySql.png",
-        "value": 80
+        "level": "Avanzado"
       }
     ],
     "devOps": [
       {
         "name": "Azure",
         "image": "../../public/azure.png",
-        "value": 60
+        "level": "Medio"
       },
       {
         "name": "Git",
         "image": "../../public/gitHub.png",
-        "value": 65
+        "level": "Medio"
       }
     ]
   }
@@ -105,6 +105,20 @@
       "name": "Juan Antonio Gonzalez Diaz",
       "contact": "juangd@yahoo.es",
       "relation": "Tutor Programa de Empleo y Formación"
+    }
+  ],
+  "button": [
+    {
+      "text1": "Eliminar",
+      "text2": "Siguiente",
+      "text3": "Anterior",
+      "text4": "Enviar"
+    }
+  ],
+  "titles": [
+    {
+      "projects": "Projects",
+      "contact": "Contact Me"
     }
   ]
 }

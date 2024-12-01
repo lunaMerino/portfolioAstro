@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-
 import CardProject from './CardProject.jsx';
 import SearchProjects from './SearchProjects.jsx';
+import Title from "./Title";
+import Button from "./Button";
 
 
 const testMode = process.env.NODE_ENV === 'development'; //true = development
@@ -49,47 +50,63 @@ const Projects = () => {
             <div className="flex flex-row justify-between">
                 <div></div>
                 <div className="ml-60">
-                    <h2 class="text-3xl font-bold text-blackish font-poppins italic text-center mb-8">Projects</h2>
+                <Title text="Projects"/>
                 </div>
                 <div className='mr-4'>
                 <SearchProjects onSearch={setSearchQuery} />
                 </div>
             </div>
-            <ul id="projects" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {
-                projects.map(
-                    (project) =>  {
-                        console.log(project);
+            <div className='min-w-full'>
+                <ul id="projects" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {
+                    projects.map(
+                        (project) =>  {
+                            console.log(project);
 
-                        return (
-                            <CardProject
-                                key={project.projectId}
-                                props={project}
-                                test={testMode}
-                                onDelete={() => handleDelete(project.projectId)}
-                            />
-                        );
-                    })}
-            </ul>
-            {
-                page===0 ? (
-                    <div>
-                        <span>{page}</span>
-                        <button onClick={() => setPage((prevPage) => prevPage + 1)}>Siguiente</button>
-                    </div>
-                ) : page === totalPages -1 ? (
-                    <div>
-                        <button onClick={() => setPage((prevPage) => prevPage - 1)}>Anterior</button>
-                        <span>{page}</span>
-                    </div>
-                ) : (
-                        <div>
-                            <button onClick={() => setPage((prevPage) => prevPage - 1)}>Anterior</button>
-                            <span>{page}</span>
-                            <button onClick={() => setPage((prevPage) => prevPage + 1)}>Siguiente</button>
+                            return (
+                                <CardProject
+                                    key={project.projectId}
+                                    props={project}
+                                    test={testMode}
+                                    onDelete={() => handleDelete(project.projectId)}
+                                />
+                            );
+                        })}
+                </ul>
+                <div className='flex flex-row justify-center mt-4'>
+                {
+                    page===0 ? (
+                        <div className='grid grid-cols-3'>
+                            <div className='w-1/3'></div>
+                            <div className='flex items-center w-1/3'>
+                                <span>{page}</span>
+                            </div>
+                            <div className='w-1/3'>
+                                <Button onClick={() => setPage((prevPage) => prevPage + 1)} label="Next"/>
+                            </div>
                         </div>
-                )
-            }
+                    ) : page === totalPages -1 ? (
+                        <div className='grid grid-cols-3'>
+                            <div className='w-1/3'>
+                                <Button onClick={() => setPage((prevPage) => prevPage - 1)} label="Previous"/>
+                            </div>
+                            <div className='flex items-center w-1/3'>
+                                <span>{page}</span>
+                            </div>
+                            <div className='w-1/'></div>
+                        </div>
+                    ) : (
+                            <div className='grid grid-cols-3'>
+                                <button onClick={() => setPage((prevPage) => prevPage - 1)}>Anterior</button>
+                                <div className='flex items-center w-1/3'>
+                                    <span>{page}</span>
+                                </div>
+                                <button onClick={() => setPage((prevPage) => prevPage + 1)}>Siguiente</button>
+                            </div>
+                    )
+                }
+                </div>
+            </div>
         </div>
         </>
     );

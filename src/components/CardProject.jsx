@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './Button.jsx';
 const CardProject = ({ props, test = false, onDelete }) => (
   <li className="bg-white shadow-lg rounded-md p-4  h-[500px] flex flex-col">
     <div
@@ -42,12 +43,9 @@ const CardProject = ({ props, test = false, onDelete }) => (
       </div>
       <p className="text-gray-700 text-sm text-center">{props.description}</p>
       {test && (
-        <button
+        <Button
           onClick={onDelete}
-          className="mt-2 bg-color7 text-white py-2 px-4 rounded hover:bg-color5 hover:text-blackish"
-        >
-          Eliminar
-        </button>
+          label="Delete"/>
       )}
     </div>
   </li>
