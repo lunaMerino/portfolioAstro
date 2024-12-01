@@ -1,9 +1,11 @@
 {
   "aboutMe": {
-    "name": "Luna García-Arcicóllar Merino",
+    "name": "Luna",
+    "surname1": "García-Arcicóllar",
+    "surname2": "Merino",
     "profession": "Web Developer",
     "description": "Passionate web developer who enjoys solving problems and creating innovative solutions.",
-    "photo": "profile.jpg"
+    "photo": "../../public/prohile.png"
   },
   "skills": {
     "frontEnd": [
@@ -104,20 +106,6 @@
       "name": "Juan Antonio Gonzalez Diaz",
       "contact": "juangd@yahoo.es",
       "relation": "Employment and Training Program Tutor"
-    }
-  ],
-  "button": [
-    {
-      "text1": "Delete",
-      "text2": "Next",
-      "text3": "Previous",
-      "text4": "Send Message"
-    }
-  ],
-  "titles": [
-    {
-      "projects": "Proyectos",
-      "contact": "Contacto"
     }
   ]
 
