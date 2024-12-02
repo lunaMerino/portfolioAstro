@@ -8,7 +8,7 @@ const CardProject = ({ props, test = false, onDelete }) => (
     ></div>
 
     <div className="flex flex-col items-start space-y-2">
-      <h3 className="text-xl font-semibold text-center">{props.projectName}</h3>
+      <h3 className="text-xl font-poppins italicfont-semibold text-center">{props.projectName}</h3>
       <div className="flex space-x-2">
       {props.repositoryUrl && (
         <a

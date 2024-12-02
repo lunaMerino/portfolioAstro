@@ -104,7 +104,7 @@ const { skills, education, workExperience, references } = data;
       <Title text="Referencias"/>
       <div class="flex flex-row items-center justify-between max-w-3xl mx-auto">
         {references.map((ref) => (
-          <div class="bg-color3 h-[140px] p-6 rounded-lg shadow-md hover:shadow-lg transition">
+          <div class="bg-color4 h-[140px] p-6 rounded-lg shadow-md hover:shadow-lg transition">
             <h3 class="text-xl font-semibold font-poppins italic text-whitish mb-2">{ref.name}</h3>
             <p class="font-poppins italic text-whitish text-sm mb-3">{ref.relation}</p>
             <a href={`mailto:${ref.contact}`} class="flex items-center gap-2 group text-s text-opacity-60 font-poppins italic text-whitish hover:text-black">

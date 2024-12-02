@@ -18,7 +18,7 @@ const SearchProjects = ({ onSearch }) => {
         type="text"
         value={query}
         onChange={handleChange}
-        className="border p-2 rounded-md w-64 mb-4"
+        className="border p-2 font-poppins italic rounded-md w-64 mb-4"
         placeholder="Search projects..."
       />
       {query.length >= 3 && (
