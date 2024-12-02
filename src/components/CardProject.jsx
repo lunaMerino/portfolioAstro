@@ -18,7 +18,7 @@ const CardProject = ({ props, test = false, onDelete }) => (
           className="inline-block"
         >
           <img
-            src="../../public/gitHub.png"
+            src="/gitHub.png"
             alt="Repositorio GitHub"
             className="w-6 h-6"
           />

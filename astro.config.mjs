@@ -6,10 +6,11 @@ import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',  // para renderizar en el lado del servidor y del cliente
+  output: 'static', // para renderizar en el lado del servidor
+  /*output: 'server',  // para renderizar en el lado del servidor y del cliente
   adapter: vercel({
     mode: "standalone"
-  }),
+  }),*/
   integrations: [
     tailwind(),
     react(),

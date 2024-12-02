@@ -5,62 +5,62 @@
     "surname2": "Merino",
     "profession": "Web Developer",
     "description": "Passionate web developer who enjoys solving problems and creating innovative solutions.",
-    "photo": "../../public/prohile.png"
+    "photo": "/profile.png"
   },
   "skills": {
     "frontEnd": [
       {
         "name": "HTML",
-        "image": "../../public/html.png",
+        "image": "/html.png",
         "level": "Advanced"
       },
       {
         "name": "CSS",
-        "image": "../../public/css.png",
+        "image": "/css.png",
         "level": "Advanced"
       },
       {
         "name": "JavaScript",
-        "image": "../../public/js.png",
+        "image": "/js.png",
         "level": "Medium"
       },
       {
         "name": "Astro",
-        "image": "../../public/astro.png",
+        "image": "/astro.png",
         "level": "Medium"
       },
       {
         "name": "Figma",
-        "image": "../../public/figmaLogo.png",
+        "image": "/figmaLogo.png",
         "level": "Advanced"
       }
     ],
     "backEnd": [
       {
         "name": "Java",
-        "image": "../../public/java.png",
+        "image": "/java.png",
         "level": "Medium"
       },
       {
         "name": "Spring Boot",
-        "image": "../../public/springBoot.png",
+        "image": "/springBoot.png",
         "level": "Medium"
       },
       {
         "name": "MySQL",
-        "image": "../../public/mySql.png",
+        "image": "/mySql.png",
         "level": "Advanced"
       }
     ],
     "devOps": [
       {
         "name": "Azure",
-        "image": "../../public/azure.png",
+        "image": "/azure.png",
         "level": "Medium"
       },
       {
         "name": "Git",
-        "image": "../../public/gitHub.png",
+        "image": "/gitHub.png",
         "level": "Medium"
       }
     ]
