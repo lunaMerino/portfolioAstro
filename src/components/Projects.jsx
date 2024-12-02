@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import CardProject from './CardProject.jsx';
 import SearchProjects from './SearchProjects.jsx';
-import Title from "./Title";
-import Button from "./Button";
+import Title from "./Title.jsx";
+import Button from "./Button.jsx";
 
 
 const testMode = process.env.NODE_ENV === 'development'; //true = development
